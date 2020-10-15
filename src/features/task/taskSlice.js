@@ -12,7 +12,7 @@ export const taskSlice = createSlice({
   },
   reducers: {
     newTask: (state, action) => {
-      state.idCount += 1;
+      state.idCount++;
       const newItem = {
         id: state.idCount,
         title: action.payload,
@@ -21,6 +21,8 @@ export const taskSlice = createSlice({
       state.tasks = [newItem, ...state.tasks];
     },
     completeTask: (state, action) => {
+      console.log(state);
+      console.log(state.tasks);
       const task = state.tasks.find((t) => t.id === action.payload.id);
       if (task) {
         task.completed = !task.completed;
