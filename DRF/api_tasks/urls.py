@@ -5,6 +5,6 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),  # apiのpathに対してはapi/urls.pyを参照するようにする
-    # authen/jwt/createにアクセスするとjwtトークンを生成
+    # authen/jwt/createにアクセスするとjwtトークンを生成 djoserが提供している
     path('authen/', include('djoser.urls.jwt'))
 ]
